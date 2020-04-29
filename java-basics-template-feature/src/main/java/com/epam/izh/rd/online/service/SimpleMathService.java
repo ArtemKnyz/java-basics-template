@@ -1,5 +1,7 @@
 package com.epam.izh.rd.online.service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -74,12 +76,8 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] getEvenDigits(int[] values) {
-        int [] newArray;
-        List<Integer>m;
-        for (int i:values) {
-
-        }
-        return new int[]{};
+        int[] evenArray = Arrays.stream(values).filter(x -> x % 2 == 0).toArray();
+        return evenArray;
     }
 
     /**
@@ -89,7 +87,10 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFactorial(int initialVal) {
-        return -1L;
+        if(initialVal==0){
+            return 1;
+        }
+        return initialVal*calcFactorial(initialVal-1);
     }
 
     /**
