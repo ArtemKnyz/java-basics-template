@@ -87,10 +87,10 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFactorial(int initialVal) {
-        if(initialVal==0){
+        if (initialVal == 0) {
             return 1;
         }
-        return initialVal*calcFactorial(initialVal-1);
+        return initialVal * calcFactorial(initialVal - 1);
     }
 
     /**
@@ -105,7 +105,7 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public long calcFibonacci(int number) {
-        if(number==0){
+        if (number == 0) {
             return number;
         } else {
             int[] fibbonachiArray = new int[number + 1];
@@ -124,7 +124,8 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] sort(int[] values) {
-        return new int[]{};
+        Arrays.sort(values);
+        return values;
     }
 
     /**
@@ -135,7 +136,15 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public boolean isPrimary(int number) {
-        return false;
+        boolean evenNumber = true;
+        if (number > 2) {
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    evenNumber = false;
+                }
+            }
+        }
+        return evenNumber;
     }
 
     /**
@@ -145,6 +154,12 @@ public class SimpleMathService implements MathService {
      */
     @Override
     public int[] reverseArray(int[] values) {
-        return new int[]{};
+        int variable = 0;
+        for (int i = 0; i < values.length / 2; i++) {
+            variable = values[i];
+            values[i] = values[values.length - i - 1];
+            values[values.length - i - 1] = variable;
+        }
+        return values;
     }
 }
