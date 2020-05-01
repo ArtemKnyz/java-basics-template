@@ -1,9 +1,6 @@
 package com.epam.izh.rd.online.service;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class SimpleMathService implements MathService {
@@ -17,6 +14,7 @@ public class SimpleMathService implements MathService {
      * Например для (-3, -1) метод должен вернуть -1;
      * Например для (3, 1) метод должен вернуть 1;
      */
+
     @Override
     public int compare(int value1, int value2) {
         if (value1 == value2) {
@@ -35,6 +33,7 @@ public class SimpleMathService implements MathService {
      * Метод возвращает максимальное число из пары.
      * Например для списка (-1, 2) метод должен вернуть 2
      */
+
     @Override
     public int maxFrom(int value1, int value2) {
         if (value1 > value2) {
